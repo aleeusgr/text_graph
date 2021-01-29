@@ -36,5 +36,8 @@ def txt_pipe(filename):
     grams = nltk.ngrams(lemmed,4)
     print(tags)
     # need to return POS tags too
-    return lemmed,grams
+    nodes = []
+    for i in tags:
+        nodes.append((i[0],{'POS':i[1]}))
+    return nodes,grams
 
